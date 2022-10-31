@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>MARKSHEET</title>
+    </head>
+    <body style="text-align:center;background-color: lightcoral;font-family: 'Arial';margin-top:70px;font-style:bold;">
+        <center>
+            <h1>SVKM USHA PRAVIN GANDH COLLEGE</h1>
+            <h2>MARKSHEET</h2>
+        <form name="Form1">
+            <table border="2 px rock-solid">
+                <tr style="text-align: center">
+                    <td>Student Name</td>
+                    <td><input type="text" /></td>
+                    </tr>
+                    <tr >
+                        <td colspan="2" align="center">Subject Marks</td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Web Programming</td>
+                        <td><input type="text" name="Wp"></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Python</td>
+                        <td><input type="text" name="Python"></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Computer Networks</td>
+                        <td><input type="text" name="CN"></td>
+                    </tr>
+                    <tr >
+                        <td colspan="2" align="center">
+                            <input type="button" onclick="a()" value="Calculate" />
+                        </td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Total</td>
+                        <td><input type="text" name="total"></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Result</td>
+                        <td><input type="text" name="result"></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Grade</td>
+                        <td><input type="text" name="grade"></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>Average</td>
+                        <td><input type="text" name="average"></td>
+                    </tr>
+                    </table>
+                    </form>
+                    </center>
+                    <script>
+                        function a(){
+                           var m1 ,m2 , m3 , total=0 , result=" ", grade=" " , average=0;
+                            m1=parseInt(document.Form1.Wp.value);
+                            m2=parseInt(document.Form1.Python.value);
+                            m3=parseInt(document.Form1.CN.value);
+                            total= m1 + m2 + m3;
+                            avg=total/3;
+                            if(m1 < 35 || m2 < 35 || m3 < 35){
+                                result="fail";
+                                grade="D";
+                            }
+                            else if(avg>=75){
+                                result="Distinction";
+                                grade="A+";
+                            }
+                            else if(avg>=60 && avg<75){
+                                result="First Class";
+                                grade="A";
+                            }
+                            else if(avg>=50 && avg<60){
+                                result="Second Class";
+                                grade="B";
+                            }
+                            else if(avg>=35 && avg<50){
+                                result="Pass";
+                                grade="C";
+                            }
+                            document.Form1.result.value=result;
+                            document.Form1.grade.value=grade;
+                            document.Form1.total.value=total;
+                            document.Form1.average.value=avg;
+
+
+                        }
+
+                    </script>
+                    </body>
+                    </html>
